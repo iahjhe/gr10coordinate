@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore the Cartesian Plane</title><link rel="stylesheet" href="style.css"></head><body>
+
+<nav class="navbar">
+  <a class="brand" href="#a">Cartesian Plane</a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="links"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div id="links" class="nav-links">
+    <a href="#b">Plane</a>
+    <a href="#c">Classroom</a>
+    <a href="#d">Identify</a>
+    <a href="#e">Plot</a>
+    <a href="#f">Discover</a>
+    <a href="#g">Calculator</a>
+    <a href="#h">Examples</a>
+    <a href="#i">Practice</a>
+    <a href="#j">Games</a>
+    <a href="#k">Real Life</a>
+    <a href="#l">Summary</a>
+  </div>
+
+  <div class="nav-progress">
+    <div class="prog" role="progressbar"
+         aria-label="Lesson progress"
+         aria-valuemin="0" aria-valuemax="10"
+         aria-valuenow="0" id="progressTrack">
+      <div id="bar"></div>
+    </div>
+    <span id="pt">0 / 10</span>
+  </div>
+</nav>
+
+<header id="a"><h1>Explore the Cartesian Plane: Plot, Connect, and Calculate!</h1>
+<p>How can we describe where a person is sitting? How can we measure the straight-line distance between two locations? Let's explore using coordinates and mathematics!</p>
+<ol><li>Identify and describe ordered pairs.</li><li>Plot points on the Cartesian coordinate plane.</li><li>Calculate the distance between two points.</li><li>Apply the Distance Formula to real-life situations.</li></ol>
+<a class="btn big" href="#b">Start Learning</a></header>
+<main>
+<section id="b"><h2>The Cartesian Plane</h2>
+<p>The <b class="cb">x-axis</b> runs left–right. The <b class="co">y-axis</b> runs up–down. They cross at the origin <b>(0, 0)</b>. An ordered pair <b>(x, y)</b> says: move <b>x</b> across first, then <b>y</b> up (positive) or down (negative). Negative x means left; negative y means down.</p>
+<div class="row"><svg id="gB" class="grid" role="img" aria-label="Coordinate plane from -10 to 10"></svg>
+<div class="panel"><p id="bOut" aria-live="polite">Click the grid to read a coordinate.</p>
+<label>x <input id="bx" type="number" step="any" value="3"></label> <label>y <input id="by" type="number" step="any" value="-2"></label>
+<div><button class="btn" data-a="plotB">Plot Point</button> <button class="btn alt" data-a="clearB">Clear Grid</button></div><p id="bMsg" aria-live="polite"></p></div></div></section>
+
+<section id="c"><h2>Ordered Pairs in the Classroom</h2>
+<p>Seats are named by row and column. To use coordinates we choose an origin and a rule. <b>Our rule:</b> x = column counted from the left, y = row counted from the front (bottom of the picture). The front-left seat is (1, 1). Juan sits at (1, 1) and Juana at (3, 2).</p>
+<div class="row"><div><div id="seats" class="seats"></div><p class="small">⬆ Back of room · Front of room ⬇ (teacher's desk)</p></div>
+<svg id="gC" class="grid" role="img" aria-label="Classroom coordinates"></svg>
+<div class="panel"><p id="cOut" aria-live="polite">Select a seat.</p><button class="btn" data-a="cChal">Challenge: find a seat</button><p id="cMsg" aria-live="polite"></p></div></div></section>
+
+<section id="d"><h2>Identify the Coordinates</h2>
+<p class="note">The textbook images were not attached, so points D, I, S and T below are <b>clearly labeled example points</b>. Edit them in <code>js/script.js</code> (array <code>DIST_PTS</code>) to match your book.</p>
+<div class="row"><svg id="gD" class="grid" role="img" aria-label="Identify points"></svg>
+<div class="panel"><h3 id="dQ"></h3><label>x <input id="dx" type="number"></label> <label>y <input id="dy" type="number"></label>
+<div><button class="btn" data-a="dCheck">Check Answer</button> <button class="btn alt" data-a="dHint">Hint</button> <button class="btn alt" data-a="dReveal">Reveal Answer</button></div><p id="dMsg" aria-live="polite"></p></div></div></section>
+
+<section id="e"><h2>Plot Your Own Points</h2>
+<p>Start at the origin. Move <b>horizontally</b> by x, then <b>vertically</b> by y. Click where the point belongs.</p>
+<div class="row"><svg id="gE" class="grid" role="img" aria-label="Plot points"></svg>
+<div class="panel"><h3 id="eQ"></h3><p id="eMsg" aria-live="polite"></p><button class="btn alt" data-a="eAll">Show All Points</button> <button class="btn alt" data-a="eRestart">Restart</button></div></div></section>
+
+<section id="f"><h2>Discover the Distance Formula</h2>
+<p>How can we find the straight-line distance between two points? Press <b>Next</b> to build the idea.</p>
+<div class="row"><svg id="gF" class="grid" role="img" aria-label="Right triangle between two points"></svg>
+<div class="panel"><div id="fSteps" class="steps" aria-live="polite"></div><button class="btn" data-a="fNext">Next</button> <button class="btn alt" data-a="fHow">See How It Works</button> <button class="btn alt" data-a="fReset">Restart</button>
+<p class="small"><span class="sw cb"></span>horizontal (solid blue) · <span class="sw co"></span>vertical (dashed orange) · <span class="sw cp"></span>diagonal (thick purple)</p></div></div></section>
+
+<section id="g"><h2>Distance Formula Calculator</h2>
+<div class="row"><svg id="gG" class="grid" role="img" aria-label="Distance calculator grid"></svg>
+<div class="panel"><div class="inputs"><label>x₁ <input id="gx1" type="number" value="1"></label><label>y₁ <input id="gy1" type="number" value="1"></label><label>x₂ <input id="gx2" type="number" value="2"></label><label>y₂ <input id="gy2" type="number" value="4"></label></div>
+<div><button class="btn" data-a="gCalc">Calculate Distance</button> <button class="btn alt" data-a="gNext">Next Step</button> <button class="btn alt" data-a="gTri">Show/Hide Triangle</button> <button class="btn alt" data-a="gReset">Reset Coordinates</button> <button class="btn alt" data-a="gRand">Random Example</button></div>
+<div id="gSteps" class="steps" aria-live="polite"></div></div></div></section>
+
+<section id="h"><h2>Guided Worked Examples</h2>
+<div><button class="btn" data-a="ex1">Example 1: E(1, 1) and R(2, 4)</button> <button class="btn" data-a="ex2">Example 2: M(3, 5) and O(−2, 1)</button> <button class="btn alt" data-a="exTry">Try It Yourself</button></div>
+<div class="row"><svg id="gH" class="grid" role="img" aria-label="Worked example"></svg><div class="panel"><div id="hSteps" class="steps" aria-live="polite">Choose an example.</div></div></div>
+<p class="small"><b>Why?</b> Subtract to get each leg of the triangle. Square so negatives become positive. Add the squares (Pythagorean Theorem). Take the square root to get the length of the hypotenuse.</p></section>
+
+<section id="i"><h2>Practice the Textbook Exercises</h2>
+<div><button class="btn" data-a="p1">Problem 1</button> <button class="btn" data-a="p2">Problem 2</button></div>
+<div class="row"><svg id="gI" class="grid" role="img" aria-label="Practice problem"></svg>
+<div class="panel"><h3 id="iQ"></h3><div class="inputs"><label>x₂ − x₁ <input id="idx" type="number"></label><label>y₂ − y₁ <input id="idy" type="number"></label></div>
+<label>Distance (e.g. 3√5 or 6.71) <input id="ians" type="text" autocomplete="off"></label>
+<div><button class="btn" data-a="iCheck">Submit</button> <button class="btn alt" data-a="iHint">Hint</button> <button class="btn alt" data-a="iSol">Show Solution</button></div><p id="iMsg" aria-live="polite"></p><div id="iSteps" class="steps"></div></div></div></section>
+
+<section id="j"><h2>Challenges and Games</h2>
+<div class="cards">
+<div class="card"><h3>Coordinate Hunt</h3><svg id="gJ1" class="grid small" role="img" aria-label="Coordinate hunt"></svg><p id="hQ"></p><p id="hSc" aria-live="polite">Score: 0</p><button class="btn alt" data-a="hunt">New Target</button></div>
+<div class="card"><h3>Distance Detective</h3><svg id="gJ2" class="grid small" role="img" aria-label="Distance detective"></svg><p id="dtQ"></p><input id="dtIn" aria-label="Your answer" placeholder="e.g. 5 or 3√2"><button class="btn" data-a="dtCheck">Check</button> <button class="btn alt" data-a="dt">New Pair</button><p id="dtMsg" aria-live="polite"></p></div>
+<div class="card"><h3>True or False</h3><div id="tf"></div></div>
+<div class="card"><h3>Beat Your Score (10 questions, no timer)</h3><svg id="gJ3" class="grid small" role="img" aria-label="Challenge"></svg><p id="bsQ"></p><input id="bsIn" aria-label="Your answer" placeholder="Answer"><button class="btn" data-a="bsCheck">Submit</button> <button class="btn alt" data-a="bsStart">Restart</button><p id="bsSc" aria-live="polite"></p></div>
+</div></section>
+
+<section id="k"><h2>Real-Life Applications</h2>
+<p>Click two places on the map, estimate the distance, then check. Each grid unit = 100 m. This is <b>straight-line</b> distance, not the road or walking distance.</p>
+<div class="row"><svg id="gK" class="grid" role="img" aria-label="Simple town map"></svg><div class="panel"><p id="kOut" aria-live="polite">Click a place.</p><label>Your estimate (units) <input id="kEst" type="number" step="any"></label><button class="btn" data-a="kCheck">Check</button><p id="kMsg" aria-live="polite"></p></div></div></section>
+
+<section id="l"><h2>Lesson Summary</h2>
+<div class="cards"><div class="card"><b>Ordered pair</b><br>(x, y)</div><div class="card"><b>Differences</b><br>x₂ − x₁ and y₂ − y₁</div><div class="card"><b>Pythagorean Theorem</b><br>a² + b² = c²</div><div class="card big"><b>Distance Formula</b><br>d = √[(x₂ − x₁)² + (y₂ − y₁)²]</div></div>
+<h3>Mini Quiz</h3><div id="quiz"></div><p id="qSc" aria-live="polite"></p>
+<button class="btn alt" data-a="review">Review the Lesson</button> <button class="btn" data-a="again">Practice Again</button></section>
+</main><script src="script.js"></script></body></html>
